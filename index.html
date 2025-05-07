@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rory Raras</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #1f2937;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    section {
+      padding: 2rem;
+    }
+
+    .photo-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      padding-bottom: 2rem;
+    }
+
+    .photo-gallery img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .photo-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #1f2937;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Rory Raras</h1>
+    <p>3rd Year Student | Saint Louis University | Google Cloud Platform Purposes</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>About Me</h2>
+      <p>Hello! I'm Lorelai Mei S. Raras. This is a website for uploading purposes.</p>
+    </section>
+
+    <section>
+      <h2>Contact Details</h2>
+      <ul>
+        <li>Email: 2234078@slu.edu.ph</li>
+        <li>Contact Num: +63 922558343</li>
+        <li>Location: Baguio, Philippines</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>My Photos</h2>
+      <div class="photo-gallery">
+        <img src="photo-1.jpg" alt="Personal Photo 1">
+        <img src="photo-2.jpg" alt="Personal Photo 2">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Rory Raras. All rights reserved.
+  </footer>
+</body>
+</html>
