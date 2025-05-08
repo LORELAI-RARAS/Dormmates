@@ -1,113 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rory Raras</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <title>My Unique Web Card</title>
+    <style>
+        body {
+            background-color: #FF69B4;
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            color: #333;
+        }
+        .card {
+            background-color: #ffffff;
+            border-left: 10px solid #FFC0CB;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        section {
+     		padding: 2rem;
+        }
 
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f4f4f9;
-      color: #333;
-      line-height: 1.6;
-    }
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            padding-bottom: 2rem;
+        }
 
-    header {
-      background: #1f2937;
-      color: #fff;
-      padding: 2rem;
-      text-align: center;
-    }
+        .photo-gallery img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
 
-    header h1 {
-      font-size: 2.5rem;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    section {
-      padding: 2rem;
-    }
-
-    .photo-gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      padding-bottom: 2rem;
-    }
-
-    .photo-gallery img {
-      width: 300px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
-    }
-
-    .photo-gallery img:hover {
-      transform: scale(1.05);
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #1f2937;
-      color: white;
-    }
-  </style>
+        .photo-gallery img:hover {
+            transform: scale(1.05);
+        }
+        
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Rory Raras</h1>
-    <p>3rd Year Student | Saint Louis University | Google Cloud Platform Purposes</p>
-  </header>
 
-  <main>
-    <section>
-      <h2>About Me</h2>
-      <p>Hello! I'm Lorelai Mei S. Raras. This is a website for uploading purposes.</p>
-    </section>
+<div class="card">
+    <h1>Hello, I'm <span id="name">Lorelai Mei S. Raras</span></h1>
+    <p>ID Number: <span id="id">2234078</span></p>
+    <p>Fun Fact: <span id="fact">I love to eat and sleep.</span></p>
+    <p>Favorite Color: <span id="color">Pink</span></p>
 
-    <section>
-      <h2>Contact Details</h2>
-      <ul>
-        <li>Email: 2234078@slu.edu.ph</li>
-        <li>Contact Num: +63 922558343</li>
-        <li>Location: Baguio, Philippines</li>
-      </ul>
-    </section>
-
-    <section>
+	<section>
       <h2>My Photos</h2>
       <div class="photo-gallery">
         <img src="photo-1.jpg" alt="Personal Photo 1">
         <img src="photo-2.jpg" alt="Personal Photo 2">
       </div>
     </section>
-  </main>
+    
+    <div class="footer">
+        Last Edited: <span id="timestamp"></span><br>
+        Page Signature: <span id="signature"></span>
+    </div>
+</div>
 
-  <footer>
-    &copy; 2025 Rory Raras. All rights reserved.
-  </footer>
+<script>
+    // Timestamp
+    const timestamp = new Date().toLocaleString();
+    document.getElementById("timestamp").innerText = timestamp;
+
+    // Generate a unique hash (fake signature)
+    const name = document.getElementById("name").innerText.trim();
+    const id = document.getElementById("id").innerText.trim();
+    const color = document.getElementById("color").innerText.trim();
+    const data = name + id + color;
+
+    function simpleHash(str) {
+        let hash = 0;
+        for (let i = 0; i < str.length; i++) {
+            hash = (hash << 5) - hash + str.charCodeAt(i);
+            hash = hash & hash;
+        }
+        return Math.abs(hash).toString(16);
+    }
+
+    document.getElementById("signature").innerText = simpleHash(data);
+</script>
+
 </body>
 </html>
